@@ -36,6 +36,7 @@ export default function TaskForm({ onAddTask }) {
         value={text}
         onChange={(event) => setText(event.target.value)}
         aria-label="New task description"
+        required
       />
 
       <select
