@@ -48,8 +48,7 @@ src/
 └── main.jsx                # React application entry point
 
 ## Setup instructions
-
-You'll need [Node.js](https://nodejs.org/) (v18 or later) installed.
+[Node.js](https://nodejs.org/) (v18 or later) installed.
 
 ```bash
 # 1. Install dependencies
