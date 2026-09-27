@@ -8,13 +8,20 @@ import { CATEGORIES } from "../categories";
 export default function TaskForm({ onAddTask }) {
   const [text, setText] = useState("");
   const [category, setCategory] = useState(CATEGORIES[0].id);
+  const [error, setError] = useState("");
+
 
   function handleSubmit(event) {
     event.preventDefault();
 
     const trimmed = text.trim();
-    if (trimmed === "") return;
 
+    if (trimmed === "") {
+    setError("Please enter a task.");
+    return;
+    }
+
+    setError("");
     onAddTask({ text: trimmed, category });
     setText("");
     setCategory(CATEGORIES[0].id);
@@ -34,7 +41,10 @@ export default function TaskForm({ onAddTask }) {
       <select
         className="task-form__select"
         value={category}
-        onChange={(event) => setCategory(event.target.value)}
+        onChange={(event) => {
+          setText(event.target.value);
+          setError("");
+        }}
         aria-label="Task category"
       >
         {CATEGORIES.map((cat) => (
@@ -47,6 +57,7 @@ export default function TaskForm({ onAddTask }) {
       <button type="submit" className="task-form__submit">
         Add task
       </button>
+      {error && <p className="task-form__error">{error}</p>}
     </form>
   );
 }
