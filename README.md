@@ -27,21 +27,24 @@ browser automatically so your list is still there when you come back.
 
 ## Project structure
 
-```
+## Project Structure
+
+```text
 src/
-  components/
-    TaskForm.jsx      # controlled form for adding a task
-    TaskList.jsx       # maps tasks to TaskItem, handles empty state
-    TaskItem.jsx        # single task row: toggle / inline edit / delete
-    FilterBar.jsx        # status + category filter controls
-    TaskStats.jsx         # remaining/completed/total counts
-    ThemeToggle.jsx        # dark/light switch
-  hooks/
-    useLocalStorage.js      # custom hook syncing state <-> localStorage
-  categories.js               # shared category list + colors
-  App.jsx                      # owns state, composes everything
-  App.css / index.css           # layout, component styles, theme tokens
-```
+├── components/
+│   ├── TaskForm.jsx        # Controlled form for adding and editing tasks
+│   ├── TaskList.jsx        # Maps tasks to TaskItem and handles empty state
+│   ├── TaskItem.jsx        # Individual task row with toggle, edit, and delete
+│   ├── FilterBar.jsx       # Status and category filter controls
+│   ├── TaskStats.jsx       # Displays remaining, completed, and total counts
+│   └── ThemeToggle.jsx     # Light/dark theme switch
+├── hooks/
+│   └── useLocalStorage.js  # Custom hook for localStorage persistence
+├── categories.js           # Shared task categories and colors
+├── App.jsx                 # Main component that manages application state
+├── App.css                 # Main application and component styles
+├── index.css               # Global styles and theme styles
+└── main.jsx                # React application entry point
 
 ## Setup instructions
 
