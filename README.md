@@ -14,6 +14,7 @@ browser automatically so your list is still there when you come back.
 - Data persists in `localStorage`, so a page refresh doesn't lose anything
 - Dark / light theme toggle (also persisted)
 - Responsive layout — works down to small mobile widths
+- Dark and light theme
 
 ## Technologies used
 
